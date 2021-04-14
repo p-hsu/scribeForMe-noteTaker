@@ -1,0 +1,14 @@
+# OSX
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# VSC
+
+*.sdf
+*.opensdf
+*.suo
+ipch/
+
+node_modules

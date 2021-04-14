@@ -1,0 +1,19 @@
+{
+  "name": "scribe-for-me",
+  "version": "1.0.0",
+  "description": "simple note taker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p-hsu/scribeForMe-noteTaker.git"
+  },
+  "author": "Pamela Hsu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/p-hsu/scribeForMe-noteTaker/issues"
+  },
+  "homepage": "https://github.com/p-hsu/scribeForMe-noteTaker#readme"
+}
