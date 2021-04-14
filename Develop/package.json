@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/p-hsu/scribeForMe-noteTaker/issues"
   },
-  "homepage": "https://github.com/p-hsu/scribeForMe-noteTaker#readme"
+  "homepage": "https://github.com/p-hsu/scribeForMe-noteTaker#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
