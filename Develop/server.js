@@ -1,6 +1,6 @@
 // Dependencies
 const express = require('express');
-const { fstat } = require('fs');
+const fs = require('fs');
 const path = require('path');
 
 // Sets up the Express App
@@ -19,14 +19,14 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/note
 //API routes
 // GET: /api/notes to fs.readFile db.json and return all saved notes as JSON (res.json)
 app.get('/api/notes', (req, res) => {
-  fs.readFile(path.join(__dirname, './db/db.json', 'utf8', (err, data) => {
+  fs.readFile(path.join(__dirname, './db/db.json'), 'utf8', (err, data) => {
     if (err) {
       console.log(`FAILED TO READ >>>>`, err)
       return
     }
     console.log(`FILE READ >>>>`, data)
     res.json(data);
-  }))
+  })
 })
 
 // POST: /api/notes to create newNote and saveNote
