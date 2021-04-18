@@ -2,6 +2,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const {v4 : uuidv4} = require('uuid');
 
 // Sets up the Express App
 const app = express();
@@ -19,18 +20,39 @@ app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/note
 //API routes
 // GET: /api/notes to fs.readFile db.json and return all saved notes as JSON (res.json)
 app.get('/api/notes', (req, res) => {
-  fs.readFile(path.join(__dirname, './db/db.json'), 'utf8', (err, data) => {
-    if (err) {
-      console.log(`FAILED TO READ >>>>`, err)
-      return
-    }
+  fs.readFile('db/db.json', 'utf8', (err, data) => {
+    if (err) throw err
     console.log(`FILE READ >>>>`, data)
     res.json(data);
   })
 })
 
 // POST: /api/notes to create newNote and saveNote
-  // newNote from req.body
+app.post('/api/notes', (req, res) => {
+  fs.readFile('db/db.json', 'utf8', (err, data) => {
+    if (err) {
+      console.log(`FAILED TO READ >>>>`, err)
+      return
+    }
+    // parse data into JSON object
+    let savedNotes = JSON.parse(data)
+    // newNote object because need to set id as obj.param
+    let newNote = {
+      title: req.body.title,
+      text: req.body.text,
+      id: uuidv4(),
+    }
+    // push newNote object to savedNotes
+    savedNotes.push(newNote)
+    console.log(savedNotes);
+    // update json to db.json > don't forget to stringify JSON and take out id
+    fs.writeFile('db/db.json',JSON.stringify(savedNotes), (err) => {
+      err ? console.error(`FAILED TO WRITE >>>>`, err) : console.log(`New note saved!`)
+    });
+    res.json(newNote);
+  });
+})
+
 
 // DELETE deleteNote?
 
