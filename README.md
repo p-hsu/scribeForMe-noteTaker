@@ -89,6 +89,8 @@ npm start
 
 ## License
 
+This project is licensed under MIT.
+
 ## Credit
 
 * Full-stack Bootcamp Program @ [Washington University, Saint Louis](https://bootcamp.tlcenter.wustl.edu/) through [© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand](https://www.trilogyed.com/)
