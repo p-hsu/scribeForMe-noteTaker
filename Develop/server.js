@@ -2,7 +2,6 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-
 // require db.json to eliminate need for fs.readFile
 const db = require('./db/db.json')
 const {v4 : uuidv4} = require('uuid');
@@ -22,7 +21,7 @@ app.get('/', (req, res) => res.sendFile(path.join(__dirname, './public/index.htm
 app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/notes.html')));
 
 //API routes
-// GET: /api/notes to res.json required db.json file 'db'
+// GET: /api/notes to res.json
 app.get('/api/notes', (req, res) => res.json(db));
 
 // POST: /api/notes to create newNote and saveNote
@@ -42,24 +41,24 @@ app.post('/api/notes', (req, res) => {
 })
 
 
-// DELETE note using id of notes, .splice at index 1
+// DELETE: note using id of notes > .splice at index 1
 app.delete('/api/notes/:id', (req, res) => {
   let noteId = req.params.id;
   let dbPath = path.join(__dirname, './db/db.json')
   // for loop to search through array, match, then splice
-  for (let i = 0; i < db.length; i++ ) {
-    if (db[i].id === noteId) {
-      db.splice(i, 1);
-      break;
-    }
-  }
-
-  // .forEach to replace for loop
-  // db.forEach((note, i) => {
+  // for (let i = 0; i < db.length; i++ ) {
   //   if (db[i].id === noteId) {
   //     db.splice(i, 1);
+  //     break;
   //   }
-  // })
+  // }
+
+  // .forEach to replace for loop
+  db.forEach((note, i) => {
+    if (db[i].id === noteId) {
+      db.splice(i, 1);
+    }
+  })
 
   // update json to db.json > don't forget to stringify JSON
   fs.writeFile(dbPath, JSON.stringify(db), (err) => {
