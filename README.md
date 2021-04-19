@@ -84,7 +84,7 @@ npm start
 
 ## Deployment
 
-
+This app is deployed on Heroku @ https://pacific-wave-96106.herokuapp.com/
 ****
 
 ## License
@@ -93,6 +93,7 @@ This project is licensed under MIT.
 
 ## Credit
 
+* [Chris Martinez](https://github.com/cbmartinez42) for helping with the Heroku deployment
 * Full-stack Bootcamp Program @ [Washington University, Saint Louis](https://bootcamp.tlcenter.wustl.edu/) through [© 2021 Trilogy Education Services, LLC, a 2U, Inc. brand](https://www.trilogyed.com/)
 
 
