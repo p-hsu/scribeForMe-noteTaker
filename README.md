@@ -1,7 +1,5 @@
-# Scribe For Me
-
-## Table of Contents
-
+# Scribe For Me 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ****
 
 ## Project overview
@@ -10,10 +8,25 @@ This application is a note taker, allowing the user to record, save, and access 
 
 ### Project Status:
 
-*ONGOING*
+This project is completed and functional.
 
 #### Issues to debug:
-*ONGOING*
+* `TypeError [ERR_INVALID_ARG_TYPE]` : fixed function for API app.get route : RESOLVED
+
+* New notes were saved but not posted on the page, Chrome Devtools helped to show that `server.js` was not linked : `app.use(express.static('public'));` : RESOLVED
+
+* Saved notes not deleting, cleaned code up using variable to declare pathfile : 
+
+    `  let dbPath = path.join(__dirname, './db/db.json')`
+
+    ...to be used in the following...
+
+    ```
+        fs.writeFile(dbPath, JSON.stringify(db), (err) => {
+        err ? console.error(`FAILED TO WRITE >>>>`, err) : console.log(`New note saved!`)
+        });
+    ```
+    : RESOLVED
 
 ****
 
@@ -23,22 +36,27 @@ This application is a note taker, allowing the user to record, save, and access 
 
 The following components are used to build the code for this project:
 
-1.
-2.
-3.
+1. front-end source code provided by the program (see Credit section)
+2. Node enviornment and the following npm packages:
+    * Express
+    * fs
+    * uuid
+3. Heroku for application deployment
 
 ### Functionality:
 
 The following lists all functions within this project:
 
-*
-*
-*
+* user can input new notes and save
+* user can see displayed saved notes and access
+* user can delete saved notes
 
 ### Process:
-#### Tasks
 
-### Beyond the MVP
+* `npm init` ran to create `package.json` file
+* required packages installed as dependencies
+* referred to class activities as resources and psuedo-coded logic for creating GET and POST routes
+* Insomnia used to check routes
 
 ****
 
@@ -52,8 +70,15 @@ The following lists all functions within this project:
 
 ## Usage
 
-## Application Screenshots
+If accessing application from source code -
+RUN WITH CLI:
+```
+npm start
+```
 
+## Application Screenshot
+
+![Scribe-For-Me screenshot](./assets/images/scribe-screenshot.png)
 
 ****
 
