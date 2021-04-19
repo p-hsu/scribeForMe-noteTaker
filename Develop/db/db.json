@@ -1,7 +1,1 @@
-[
-    {
-        "title":"title",
-        "text":"Text",
-        "id": "4324324"
-    }
-]
+[{"title":"Testing","text":"This is a test","id":"4c0ef1e3-6413-4dfa-b42d-277972b251c1"},{"title":"Heroku Deployment","text":"Figure out how to deploy application to Heroku","id":"8cef175f-8dc0-4230-9414-fa69d1eba1c5"},{"title":"Finish Readme","text":"- screenshots\n- completed readme\n- push to github","id":"8ac7f928-e214-447c-9e25-c82c5490ac8e"}]
