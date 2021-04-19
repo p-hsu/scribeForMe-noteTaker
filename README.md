@@ -66,6 +66,7 @@ The following lists all functions within this project:
 2. Open Terminal (MacOS) or Git Bash (Windows) and change location to where you want the cloned directory
 3. Type `git clone` and paste copied respository
 4. Directory should include the following, excluding node-modules:
+
 ![Directory Structure:](./public/assets/images/dir-struc.png)
 
 ## Usage
@@ -78,7 +79,7 @@ npm start
 
 ## Application Screenshot
 
-![Scribe-For-Me screenshot](./public/assets/images/scribe-screenshot.png)
+![Scribe-For-Me screenshot](./public/assets/images/scribe-ss.png)
 
 ****
 
